@@ -1,0 +1,28 @@
+version : '3'
+
+services:
+  mysql:
+    container_name: MYSQL
+    image: mysql:latest
+    environment:
+      MYSQL_USER: root
+      MYSQL_PASSWORD: rootbatata
+      MYSQL_ROOT_PASSWORD: rootbatata
+      MYSQL_DATABASE: default_schema
+    ports:
+      - 3306:3306
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+    restart: always
+  phpmyadmin:
+    container_name: PMA
+    image: phpmyadmin/phpmyadmin
+    links:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_SERVER: mysql
+      PMA_PORT: 3306
+    restart: always
+    ports:
+      - 8006:80

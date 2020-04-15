@@ -1,0 +1,10 @@
+version: '3'
+services:
+  web:
+    container_name: PHP56
+    image: php56
+    volumes:
+     - ..:/var/www/html
+    ports:
+     - "80:80"
+     - "443:443"
