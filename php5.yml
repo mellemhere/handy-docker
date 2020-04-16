@@ -1,6 +1,6 @@
 version: '3'
 services:
-  web:
+  php56:
     container_name: PHP56
     image: php56
     volumes:

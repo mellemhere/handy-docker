@@ -1,6 +1,6 @@
 version: '3'
 services:
-  web:
+  php73:
     container_name: PHP73
     image: php73
     volumes:
